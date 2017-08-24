@@ -12,7 +12,7 @@
         $("#messages").animate({ scrollTop: $('#messages')[0].scrollHeight}, 1000);
     }
 
-    var conn = new WebSocket('ws://venantvr-corbakatak.rhcloud.com:8000/chat');
+    var conn = new WebSocket('ws://venantvr-corbakatak.rhcloud.com:8000');
 
     conn.onopen = function(e) {
         console.log("Connection established!");
@@ -35,7 +35,7 @@
             'time': moment().format('hh:mm a')
         };
 
-        updateMessages(msg);
+        //updateMessages(msg);
         conn.send(JSON.stringify(msg));
 
         $('#user').val('');
